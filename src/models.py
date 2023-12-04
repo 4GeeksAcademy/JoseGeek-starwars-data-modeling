@@ -9,8 +9,7 @@ Base = declarative_base()
 
 class Person(Base):
     __tablename__ = 'person'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
+    
     id = Column(Integer, primary_key=True)
     username = Column(String(250), nullable=False)
     first_name = Column(String(250), nullable=False)
@@ -19,8 +18,7 @@ class Person(Base):
 
 class Favorites(Base):
     __tablename__ = 'favorites'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
+    
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'))
     type_of_favorite = Column(String(250), nullable=False)
@@ -30,8 +28,7 @@ class Favorites(Base):
 
 class People(Base):
     __tablename__ = 'people'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
+   
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     birth_year = Column(String(250))
@@ -43,8 +40,7 @@ class People(Base):
 
 class Planets(Base):
     __tablename__ = 'planets'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
+   
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     climate = Column(String(250))
