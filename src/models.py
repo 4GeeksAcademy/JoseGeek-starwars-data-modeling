@@ -10,16 +10,16 @@ Base = declarative_base()
 class Users(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
-    name = Column(String(100), unique=True)
-    email = Column(String(100), unique=True)
+    name = Column(String(250), unique=True)
+    email = Column(String(250), unique=True)
 
 class Starships(Base):
     __tablename__ = 'starships'
     id = Column(Integer, primary_key=True)
-    name = Column(String(100), unique=True, nullable=False)
-    model = Column(String(100))
-    starship_class = Column(String(100))
-    manufacturer = Column(String(100))
+    name = Column(String(250), unique=True, nullable=False)
+    model = Column(String(250))
+    starship_class = Column(String(250))
+    manufacturer = Column(String(250))
     cost_in_credits = Column(Integer)
     length = Column(Integer)
     crew = Column(Integer)
@@ -41,14 +41,14 @@ class Fav_Starships(Base):
 class Planets(Base):
     __tablename__ = 'planets'
     id = Column(Integer, primary_key=True)
-    name = Column(String(100), unique=True, nullable=False)
+    name = Column(String(250), unique=True, nullable=False)
     rotation_period = Column(Integer)
     diameter = Column(Integer)
     rotation_period = Column(Integer)
-    gravity = Column(String(100))
+    gravity = Column(String(250))
     population = Column(Integer)
-    climate = Column(String(100))
-    terrain = Column(String(100))
+    climate = Column(String(250))
+    terrain = Column(String(250))
     surface_water = Column(Integer)
     fav_planet = Column(Integer, ForeignKey('fav_planets.id'))
     fav_planet_relationship = relationship("Fav_planets", uselist=False)
@@ -64,14 +64,14 @@ class Fav_Planets(Base):
 class Characters(Base):
     __tablename__ = 'characters'
     id = Column(Integer, primary_key=True)
-    name = Column(String(100), unique=True)
+    name = Column(String(250), unique=True)
     mass = Column(Integer)
     height = Column(Integer)
-    hair_color = Column(String(100))
-    skin_color = Column(String(100))
-    eye_color = Column(String(100))
-    birth_year = Column(String(100))
-    gender = Column(String(100))
+    hair_color = Column(String(250))
+    skin_color = Column(String(250))
+    eye_color = Column(String(250))
+    birth_year = Column(String(250))
+    gender = Column(String(250))
     planet = Column(Integer, ForeignKey('planets.id'))
     planet_relationship = relationship(Planets)
     starship = Column(Integer, ForeignKey('starships.id'))
@@ -94,9 +94,3 @@ class Fav_Characters(Base):
     
 ## Draw from SQLAlchemy base
 render_er(Base, 'diagram.png')
-
-
-
-
-
-
